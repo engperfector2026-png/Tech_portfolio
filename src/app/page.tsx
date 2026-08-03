@@ -45,15 +45,18 @@ export default function HomePage() {
             </p>
 
             <div className="flex flex-col sm:flex-row items-start gap-3">
-              <Button asChild size="lg" className="bg-cyan-500 hover:bg-cyan-400 text-black font-semibold h-11 px-6">
-                <Link href="/projects">
+              <Link href="/projects">
+                <Button size="lg" className="bg-cyan-500 hover:bg-cyan-400 text-black font-semibold h-11 px-6">
                   View My Work
                   <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
-              </Button>
-              <Button asChild variant="outline" size="lg" className="border-zinc-500 text-white hover:bg-white/10 h-11 px-6 backdrop-blur-sm">
-                <Link href="/contact">Contact Me</Link>
-              </Button>
+                </Button>
+              </Link>
+
+              <Link href="/contact">
+                <Button variant="outline" size="lg" className="border-zinc-500 text-white hover:bg-white/10 h-11 px-6 backdrop-blur-sm">
+                  Contact Me
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
@@ -157,12 +160,12 @@ export default function HomePage() {
           <p className="text-zinc-300 text-sm md:text-base max-w-lg mx-auto mb-6">
             Open to collaborations, internships, and technical projects.
           </p>
-          <Button asChild size="lg" className="bg-cyan-500 hover:bg-cyan-400 text-black font-semibold h-11 px-8">
-            <Link href="/contact">
+          <Link href="/contact">
+            <Button size="lg" className="bg-cyan-500 hover:bg-cyan-400 text-black font-semibold h-11 px-8">
               Get In Touch
               <ArrowRight className="ml-2 h-4 w-4" />
-            </Link>
-          </Button>
+            </Button>
+          </Link>
         </div>
       </section>
     </div>
