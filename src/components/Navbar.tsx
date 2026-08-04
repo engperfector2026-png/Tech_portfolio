@@ -70,10 +70,17 @@ export default function Navbar() {
 
         {/* Mobile Menu */}
         <Sheet open={open} onOpenChange={setOpen}>
-          <SheetTrigger className="md:hidden">
-            <Button variant="ghost" size="icon" className="text-zinc-300 hover:text-white">
-              {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-            </Button>
+          <SheetTrigger
+            className="md:hidden"
+            render={
+              <Button
+                variant="ghost"
+                size="icon"
+                className="text-zinc-300 hover:text-white"
+              />
+            }
+          >
+            {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </SheetTrigger>
 
           <SheetContent side="right" className="bg-zinc-950 border-zinc-800 w-72 px-0">

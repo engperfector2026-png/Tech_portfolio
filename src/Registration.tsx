@@ -1,155 +1,156 @@
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { Calendar, Clock, MapPin, Users, ArrowRight } from "lucide-react"
+import Link from "next/link"
+import {
+  Mail,
+  Cpu,
+  MapPin,
+} from "lucide-react"
+import {
+  FaGithub,
+  FaLinkedin,
+  FaFacebook,
+  FaWhatsapp,
+  FaXTwitter,
+} from "react-icons/fa6"
 
-export default function SessionRegistrationPage() {
+const navLinks = [
+  { href: "/about", label: "About" },
+  { href: "/projects", label: "Projects" },
+  { href: "/activities", label: "Activities" },
+  { href: "/sessions", label: "Sessions" },
+  { href: "/contact", label: "Contact" },
+]
+
+const socialLinks = [
+  {
+    href: "https://github.com", // replace
+    label: "GitHub",
+    icon: FaGithub,
+  },
+  {
+    href: "https://linkedin.com", // replace
+    label: "LinkedIn",
+    icon: FaLinkedin,
+  },
+  {
+    href: "https://x.com", // replace
+    label: "X",
+    icon: FaXTwitter,
+  },
+  {
+    href: "https://facebook.com", // replace
+    label: "Facebook",
+    icon: FaFacebook,
+  },
+  {
+    href: "https://wa.me/254XXXXXXXXX", // replace with your number
+    label: "WhatsApp",
+    icon: FaWhatsapp,
+  },
+]
+
+export default function Footer() {
   return (
-    <div className="container mx-auto px-4 py-16 md:py-24">
-      {/* Header */}
-      <div className="mb-12 md:mb-16 max-w-2xl">
-        <p className="text-cyan-400 text-sm font-medium tracking-wide uppercase mb-3">
-          Registration
-        </p>
-        <h1 className="text-3xl md:text-5xl font-bold text-white tracking-tight mb-4">
-          Register for Session
-        </h1>
-        <p className="text-lg text-zinc-400 leading-relaxed">
-          Secure your spot for the upcoming live technical session.
-        </p>
-      </div>
-
-      <div className="grid lg:grid-cols-12 gap-8 lg:gap-12">
-        {/* Left - Session Info */}
-        <div className="lg:col-span-5 space-y-6">
-          <div className="p-6 md:p-7 rounded-2xl border border-cyan-500/30 bg-zinc-900/50">
-            <div className="flex items-center gap-2 mb-5">
-              <span className="relative flex h-2.5 w-2.5">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-red-500"></span>
+    <footer className="border-t border-zinc-800/80 bg-zinc-950">
+      <div className="container mx-auto px-4 sm:px-6">
+        {/* Main Content */}
+        <div className="py-14 md:py-16 grid grid-cols-1 md:grid-cols-12 gap-12 lg:gap-8">
+          
+          {/* Brand Block */}
+          <div className="md:col-span-5 space-y-5">
+            <Link
+              href="/"
+              className="inline-flex items-center gap-2.5 group"
+            >
+              <span className="w-9 h-9 rounded-lg bg-cyan-500/10 border border-cyan-500/25 flex items-center justify-center transition-all duration-300 ease-out group-hover:border-cyan-500/50 group-hover:bg-cyan-500/15 group-hover:scale-105 group-hover:shadow-[0_0_12px_rgba(34,211,238,0.25)]">
+                <Cpu className="h-4 w-4 text-cyan-400 transition-transform duration-300 group-hover:rotate-12" />
               </span>
-              <span className="text-sm font-medium text-cyan-400">Upcoming Session</span>
-            </div>
+              <span className="text-lg font-semibold text-white tracking-tight transition-colors duration-300 group-hover:text-cyan-400">
+                Eng Perfector
+              </span>
+            </Link>
 
-            <h2 className="text-2xl font-semibold text-white mb-4">
-              Introduction to Embedded Systems
-            </h2>
-
-            <p className="text-zinc-400 leading-relaxed mb-6">
-              A practical session covering the basics of microcontrollers, sensors, and building simple embedded projects. Perfect for beginners and intermediate learners.
+            <p className="text-sm text-zinc-400 leading-relaxed max-w-xs">
+              Computer Technologist focused on hardware engineering, embedded
+              systems, and practical software solutions.
             </p>
 
-            <div className="space-y-4 text-sm">
-              <div className="flex items-center gap-3 text-zinc-300">
-                <Calendar className="h-4 w-4 text-cyan-400 shrink-0" />
-                <span>Date to be announced</span>
-              </div>
-              <div className="flex items-center gap-3 text-zinc-300">
-                <Clock className="h-4 w-4 text-cyan-400 shrink-0" />
-                <span>Duration: 90 minutes</span>
-              </div>
-              <div className="flex items-center gap-3 text-zinc-300">
-                <MapPin className="h-4 w-4 text-cyan-400 shrink-0" />
-                <span>Online • Zoom / YouTube</span>
-              </div>
-              <div className="flex items-center gap-3 text-zinc-300">
-                <Users className="h-4 w-4 text-cyan-400 shrink-0" />
-                <span>Limited seats available</span>
-              </div>
+            <div className="flex items-center gap-2 text-sm text-zinc-500">
+              <MapPin className="h-4 w-4 text-cyan-500/70" />
+              <span>Maseno · Kisumu County, Kenya</span>
             </div>
           </div>
 
-          {/* What you'll learn */}
-          <div className="p-6 md:p-7 rounded-2xl border border-zinc-800 bg-zinc-900/40">
-            <h3 className="text-sm font-medium text-white mb-4">What you’ll learn</h3>
-            <ul className="space-y-3 text-sm text-zinc-400">
-              <li className="flex gap-2">
-                <span className="text-cyan-400">•</span>
-                Fundamentals of microcontrollers
-              </li>
-              <li className="flex gap-2">
-                <span className="text-cyan-400">•</span>
-                Working with sensors
-              </li>
-              <li className="flex gap-2">
-                <span className="text-cyan-400">•</span>
-                Building simple embedded projects
-              </li>
-              <li className="flex gap-2">
-                <span className="text-cyan-400">•</span>
-                Practical tips and common pitfalls
-              </li>
+          {/* Navigation Block */}
+          <div className="md:col-span-3">
+            <h4 className="text-xs font-semibold uppercase tracking-widest text-zinc-500 mb-5">
+              Navigation
+            </h4>
+            <ul className="space-y-3">
+              {navLinks.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className="relative inline-block text-sm text-zinc-400 transition-colors duration-300 hover:text-cyan-400 after:absolute after:left-0 after:-bottom-0.5 after:h-[1.5px] after:w-0 after:bg-cyan-400 after:transition-all after:duration-300 hover:after:w-full"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
             </ul>
+          </div>
+
+          {/* Contact + Social Block */}
+          <div className="md:col-span-4 space-y-6">
+            <div>
+              <h4 className="text-xs font-semibold uppercase tracking-widest text-zinc-500 mb-5">
+                Get in Touch
+              </h4>
+              <a
+                href="mailto:engperfector2026@gmail.com"
+                className="group inline-flex items-center gap-2.5 text-sm text-zinc-400 transition-colors duration-300 hover:text-cyan-400"
+              >
+                <Mail className="h-4 w-4 text-zinc-500 transition-all duration-300 group-hover:text-cyan-400 group-hover:scale-110" />
+                <span className="break-all transition-colors duration-300">
+                  engperfector2026@gmail.com
+                </span>
+              </a>
+            </div>
+
+            {/* Social Icons - Horizontal */}
+            <div>
+              <h4 className="text-xs font-semibold uppercase tracking-widest text-zinc-500 mb-4">
+                Follow
+              </h4>
+              <div className="flex flex-wrap items-center gap-3">
+                {socialLinks.map((item) => (
+                  <a
+                    key={item.label}
+                    href={item.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={item.label}
+                    className="group relative flex h-10 w-10 items-center justify-center rounded-lg border border-zinc-800 bg-zinc-900/80 text-zinc-400 transition-all duration-300 ease-out hover:-translate-y-1 hover:border-cyan-500/50 hover:bg-cyan-500/10 hover:text-cyan-400 hover:shadow-[0_4px_14px_rgba(34,211,238,0.2)]"
+                  >
+                    <item.icon className="h-4 w-4 transition-transform duration-300 group-hover:scale-110" />
+                  </a>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
 
-        {/* Right - Registration Form */}
-        <div className="lg:col-span-7">
-          <div className="p-6 md:p-8 rounded-2xl border border-zinc-800 bg-zinc-900/50">
-            <h2 className="text-xl font-semibold text-white mb-6">
-              Registration Form
-            </h2>
-
-            <form className="space-y-5">
-              <div className="grid sm:grid-cols-2 gap-5">
-                <div className="space-y-2">
-                  <label className="text-sm font-medium text-zinc-300">
-                    Full Name <span className="text-cyan-400">*</span>
-                  </label>
-                  <Input
-                    placeholder="Your full name"
-                    className="bg-zinc-950/80 border-zinc-700 focus-visible:ring-cyan-500 focus-visible:border-cyan-500 h-12"
-                  />
-                </div>
-                <div className="space-y-2">
-                  <label className="text-sm font-medium text-zinc-300">
-                    Email Address <span className="text-cyan-400">*</span>
-                  </label>
-                  <Input
-                    type="email"
-                    placeholder="your@email.com"
-                    className="bg-zinc-950/80 border-zinc-700 focus-visible:ring-cyan-500 focus-visible:border-cyan-500 h-12"
-                  />
-                </div>
-              </div>
-
-              <div className="space-y-2">
-                <label className="text-sm font-medium text-zinc-300">
-                  Experience Level
-                </label>
-                <select className="w-full h-12 rounded-md border border-zinc-700 bg-zinc-950/80 px-3 text-sm text-zinc-300 focus:outline-none focus:ring-2 focus:ring-cyan-500">
-                  <option value="">Select your level</option>
-                  <option value="beginner">Beginner</option>
-                  <option value="intermediate">Intermediate</option>
-                  <option value="advanced">Advanced</option>
-                </select>
-              </div>
-
-              <div className="space-y-2">
-                <label className="text-sm font-medium text-zinc-300">
-                  Why do you want to join? (Optional)
-                </label>
-                <Textarea
-                  placeholder="Tell us a bit about your interest..."
-                  rows={4}
-                  className="bg-zinc-950/80 border-zinc-700 focus-visible:ring-cyan-500 focus-visible:border-cyan-500 resize-none"
-                />
-              </div>
-
-              <div className="pt-2">
-                <Button className="w-full sm:w-auto bg-cyan-500 hover:bg-cyan-400 text-black font-semibold h-12 px-8">
-                  Confirm Registration
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
-              </div>
-
-              <p className="text-xs text-zinc-500 pt-2">
-                By registering, you agree to receive session details and updates via email.
-              </p>
-            </form>
+        {/* Bottom Bar */}
+        <div className="border-t border-zinc-800/70 py-6">
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-3">
+            <p className="text-xs text-zinc-600">
+              © {new Date().getFullYear()} Eng Perfector. All rights reserved.
+            </p>
+            <p className="text-xs text-zinc-600 tracking-wide">
+              Hardware · Embedded · Software
+            </p>
           </div>
         </div>
       </div>
-    </div>
+    </footer>
   )
 }

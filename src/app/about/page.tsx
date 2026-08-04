@@ -70,7 +70,7 @@ export default function AboutPage() {
             </div>
             <div className="p-5 rounded-2xl border border-zinc-800 bg-zinc-900/40">
               <h3 className="text-sm font-medium text-zinc-400 mb-1.5">Location</h3>
-              <p className="text-white font-medium">Kisumu, Kenya</p>
+              <p className="text-white font-medium">Maseno, Kisumu county</p>
               <p className="text-zinc-500 text-sm mt-1">Open to remote opportunities</p>
             </div>
           </div>

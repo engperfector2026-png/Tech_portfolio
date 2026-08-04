@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Mail, MapPin, Phone, Send, ArrowUpRight } from "lucide-react"
+import ContactMap from "@/components/ContactMap"
 
 export default function ContactPage() {
   return (
@@ -15,8 +16,8 @@ export default function ContactPage() {
           Get In Touch
         </h1>
         <p className="text-zinc-400 text-lg leading-relaxed">
-          Have a question, collaboration idea, or opportunity? I’d love to hear from you.
-          I usually respond within 24 hours.
+          Have a question, collaboration idea, or opportunity? I’d love to hear
+          from you. I usually respond within a shortest time possible .
         </p>
       </div>
 
@@ -86,7 +87,6 @@ export default function ContactPage() {
 
         {/* Contact Info Sidebar */}
         <div className="lg:col-span-2 space-y-5">
-          {/* Email */}
           <a
             href="mailto:engperfector2026@gmail.com"
             className="group block rounded-2xl border border-zinc-800 bg-zinc-900/50 p-5 hover:border-cyan-500/40 hover:bg-zinc-900/80 transition-all duration-300"
@@ -100,14 +100,13 @@ export default function ContactPage() {
                   <h3 className="text-sm font-medium text-zinc-400">Email</h3>
                   <ArrowUpRight className="h-4 w-4 text-zinc-600 group-hover:text-cyan-400 transition-colors" />
                 </div>
-                <p className="text-white font-medium mt-1 truncate">
+                <p className="text-white font-medium mt-1 break-all">
                   engperfector2026@gmail.com
                 </p>
               </div>
             </div>
           </a>
 
-          {/* Location */}
           <div className="rounded-2xl border border-zinc-800 bg-zinc-900/50 p-5">
             <div className="flex items-start gap-4">
               <div className="w-11 h-11 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center shrink-0">
@@ -115,13 +114,14 @@ export default function ContactPage() {
               </div>
               <div>
                 <h3 className="text-sm font-medium text-zinc-400">Location</h3>
-                <p className="text-white font-medium mt-1">Kisumu, Kenya</p>
-                <p className="text-zinc-500 text-sm mt-0.5">Available for remote work</p>
+                <p className="text-white font-medium mt-1">Maseno, Kisumu County</p>
+                <p className="text-zinc-500 text-sm mt-0.5">
+                  Available for remote work
+                </p>
               </div>
             </div>
           </div>
 
-          {/* Phone */}
           <a
             href="tel:+254796985894"
             className="group block rounded-2xl border border-zinc-800 bg-zinc-900/50 p-5 hover:border-cyan-500/40 hover:bg-zinc-900/80 transition-all duration-300"
@@ -140,21 +140,9 @@ export default function ContactPage() {
             </div>
           </a>
 
-          {/* Map / Visual Block */}
-          <div className="relative rounded-2xl border border-zinc-800 bg-zinc-900/50 h-52 overflow-hidden group">
-            {/* Decorative grid background */}
-            <div className="absolute inset-0 bg-[linear-gradient(to_right,#27272a_1px,transparent_1px),linear-gradient(to_bottom,#27272a_1px,transparent_1px)] bg-[size:24px_24px] opacity-40" />
-            
-            {/* Soft glow */}
-            <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/80 via-transparent to-transparent" />
-            
-            <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-6">
-              <div className="w-12 h-12 rounded-full bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center mb-3">
-                <MapPin className="h-5 w-5 text-cyan-400" />
-              </div>
-              <p className="text-white font-medium">Kisumu, Kenya</p>
-              <p className="text-zinc-500 text-sm mt-1">East Africa • UTC+3</p>
-            </div>
+          {/* Live Map — client-only via ContactMap */}
+          <div className="rounded-2xl border border-zinc-800 overflow-hidden h-64 shadow-lg">
+            <ContactMap />
           </div>
         </div>
       </div>
